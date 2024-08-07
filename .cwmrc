@@ -1,0 +1,119 @@
+# Font, Style, Color
+        fontname                "SF-UI-Display-Regular:pixelsize=10"
+        color menubg            "#091E33"
+        color menufg            "#ACF7EF"
+        color font              "#faf7e4"
+        color selfont           "#204E54" 
+        color urgencyborder     "#204E54"
+        color groupborder       "#307061"
+        color ungroupborder     "#67C8B6"
+
+        borderwidth 1 
+                color activeborder      "#204E54"
+                color inactiveborder    "#ACF7EF"
+
+
+
+#Menu
+	command "Terminal"              xterm
+        command "Navegador Chrome"      chrome
+        command "IDE Geany"             geany
+        command "IDE VIM"		"xterm vim"
+        command "Reproductor VLC"       vlc
+        command "Internet 4G"           "doas dhclient urndis0"
+        command "Lector PDF"            xpdf
+	command "Reddit"                "chrome https://old.reddit.com"
+        command "HexChat"               hexchat
+        command "Gestor de Archivos"    thunar
+	command "Actualizar"		"cwm restart"
+    	command "Apagar Equipo"         "doas shutdown -p now"
+        command "Reiniciar"             "doas shutdown -r now"
+
+	vtitle 58
+	gap 0 17 0 0
+
+bind-key 4-r "rofi -show run"
+bind-key M-s "./scripts/screenshot"
+
+
+#bindkeys workspaces
+bind-key M-1 group-only-1
+bind-key M-2 group-only-2
+bind-key M-3 group-only-3
+bind-key M-4 group-only-4
+bind-key M-5 group-only-5
+bind-key M-6 group-only-6
+bind-key M-7 group-only-7
+bind-key M-8 group-only-8
+bind-key-M-9 group-only-9
+
+bind-key MS-1 window-movetogroup-1
+bind-key MS-2 window-movetogroup-2
+bind-key MS-3 window-movetogroup-3
+bind-key MS-4 window-movetogroup-4
+bind-key MS-5 window-movetogroup-5
+bind-key MS-6 window-movetogroup-6
+bind-key MS-7 window-movetogroup-7
+bind-key MS-8 window-movetogroup-8
+bind-key MS-9 window-movetogroup-9
+
+#volumen control
+bind-key 4-Up "doas mixerctl outputs.master=+2"
+bind-key 4-Down "doas mixerctl outputs.master=-2"
+
+bind-key C4-Tab window-vitle
+bind-key C4-Tab window-htitle
+bind-key 4c "mate-calc"
+
+
+sticky yes
+moveamount 1
+
+bind-mouse 4-1 window-move
+bind-mouse 4-2 window-move
+bind-mouse 4-3 window-resize
+
+bind-mouse CM-1 window-stick
+bind-mouse CM-2 window-stick
+bind-mouse CM-3 window-maximize
+
+bind-mouse MS-1 window-vtitle
+bind-mouse MS-2 window-vtitle
+bind-mouse MS-3 window-freeze
+
+unbind-mouse CMS-M3
+unbind-key M-question
+unbind-key M-equal
+unbind-key CM-Delete
+unbind-key CMS-r
+
+bind-key CM-Delete restart
+bind-key MS-F4 quit
+
+unbind-key CM-equal
+unbind-key CM-g
+unbind-key CM-n
+unbind-key CM-w
+unbind-key M-perdiod
+unbind-key M-Left
+unbind-key M-Right
+
+bind-key M-q window-close
+bind-key M-w menu-window
+bind-key M-F4 window-close
+
+
+bind-key 4-h group-rcycle
+bind-key 4-l group-cycle
+bind-key 4-j window-hide
+bind-key 4-k window-maximize
+bind-key 4S-k window-fullscreen
+
+bind-key C4-h pointer-move-left
+bind-key C4-l pointer-move-right
+bind-key C4-j pointer-move-down
+bind-key C4-k pointer-move-up
+bind-key CS4-h pointer-move-left-big
+bind-key CS4-l pointer-move-right-big
+bind-key CS4-j pointer-move-down-big
+bind-key CS4-k pointer-move-up-big
