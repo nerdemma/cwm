@@ -1,28 +1,40 @@
 # Font, Style, Color
         fontname                "SF-UI-Display-Regular:pixelsize=10"
-        color menubg            "#091E33"
-        color menufg            "#ACF7EF"
-        color font              "#faf7e4"
-        color selfont           "#204E54" 
-        color urgencyborder     "#204E54"
-        color groupborder       "#307061"
-        color ungroupborder     "#67C8B6"
-
-        borderwidth 1 
-                color activeborder      "#204E54"
-                color inactiveborder    "#ACF7EF"
 
 
+#galaxy spiral theme
+       #color menubg            "#091E33"
+       #color menufg            "#ACF7EF"
+       #color font              "#faf7e4"
+       #color selfont           "#204E54" 
+       #color urgencyborder     "#204E54"
+       #color groupborder       "#307061"
+       #color ungroupborder     "#67C8B6"
+	#borderwidth 1 
+                #color activeborder      "#204E54"
+                #color inactiveborder    "#ACF7EF"
 
-#Menu
+	color menubg 		"#46918f"
+	color menufg 		"#c7e2c3"
+	color font		"#c7e2c3"
+	color selfont 		"#54735f"
+	color urgencyborder 	"#b07d48"
+	color ungroupborder 	"#7b7658"
+	borderwidth 1
+	color activeborder 	"#46918f"
+	color inactiveborder 	"#c7e2c3"
+
+
+	#Menu
 	command "Terminal"              xterm
-        command "Navegador Chrome"      chrome
+        command "Navegador Chrome"      "chrome --disable-gpu"
         command "IDE Geany"             geany
-        command "IDE VIM"		"xterm vim"
+        command "IDE VIM"		"xterm -fullscreen vim"
         command "Reproductor VLC"       vlc
         command "Internet 4G"           "doas dhclient urndis0"
+	command "E-Mail Mutt"		"xterm -fullscreen mutt"
         command "Lector PDF"            xpdf
-	command "Reddit"                "chrome https://old.reddit.com"
+	command "Reddit"                "chrome --disable-gpu https://old.reddit.com"
         command "HexChat"               hexchat
         command "Gestor de Archivos"    thunar
 	command "Actualizar"		"cwm restart"
@@ -87,8 +99,17 @@ unbind-key M-equal
 unbind-key CM-Delete
 unbind-key CMS-r
 
-bind-key CM-Delete restart
-bind-key MS-F4 quit
+	#restart cwm
+	bind-key CM-Delete restart
+
+	#exit cwm
+	bind-key MS-F4 quit
+
+	#reboot network
+	bind-key CM-n doas sh /etc/netstart
+
+	#run terminal
+	bind-key CM-t xterm 
 
 unbind-key CM-equal
 unbind-key CM-g
@@ -117,3 +138,8 @@ bind-key CS4-h pointer-move-left-big
 bind-key CS4-l pointer-move-right-big
 bind-key CS4-j pointer-move-down-big
 bind-key CS4-k pointer-move-up-big
+
+
+
+
+
